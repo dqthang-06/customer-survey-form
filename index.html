@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Market Research Survey</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: "Lucida Grande", "Lucida Sans Unicode", Tahoma, sans-serif;
+        }
+
+        body {
+            background-color: #f0f2f5;
+            padding: 40px 15px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .survey-container {
+            background: #ffffff;
+            width: 100%;
+            max-width: 680px;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+        }
+
+        .survey-header {
+            margin-bottom: 25px;
+            border-bottom: 1px solid #e2e8f0;
+            padding-bottom: 15px;
+        }
+
+        .survey-header h2 {
+            font-size: 24px;
+            color: #1e293b;
+            margin-bottom: 6px;
+        }
+
+        .survey-header p {
+            font-size: 14px;
+            color: #64748b;
+        }
+
+        .form-group {
+            margin-bottom: 22px;
+        }
+
+        .form-group label.title {
+            display: block;
+            font-size: 14px;
+            font-weight: bold;
+            color: #334155;
+            margin-bottom: 8px;
+        }
+
+        .form-group select {
+            width: 100%;
+            max-width: 320px;
+            padding: 8px 10px;
+            border: 1px solid #cbd5e1;
+            border-radius: 4px;
+            font-size: 14px;
+            outline: none;
+            background-color: #fff;
+        }
+
+        .matrix-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+            font-size: 13px;
+        }
+
+        .matrix-table th,
+        .matrix-table td {
+            padding: 10px 8px;
+            text-align: center;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .matrix-table th {
+            background-color: #f8fafc;
+            color: #475569;
+            font-weight: 600;
+        }
+
+        .matrix-table td:first-child {
+            text-align: left;
+            font-weight: 500;
+            color: #334155;
+            width: 35%;
+        }
+
+        .matrix-table tr:nth-child(even) td {
+            background-color: #fcfcfd;
+        }
+
+        .matrix-table input[type="radio"] {
+            cursor: pointer;
+        }
+
+        .btn-submit {
+            padding: 10px 24px;
+            background-color: #0284c7;
+            color: #ffffff;
+            font-size: 15px;
+            font-weight: 600;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background 0.2s;
+            margin-top: 15px;
+        }
+
+        .btn-submit:hover {
+            background-color: #0369a1;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="survey-container">
+        <div class="survey-header">
+            <h2>Market Research Survey</h2>
+            <p>Please take a few moments to complete this satisfaction survey.</p>
+        </div>
+
+        <form action="" method="POST">
+            <!-- Độ tuổi -->
+            <div class="form-group">
+                <label class="title">What is your age group?</label>
+                <select name="age_group">
+                    <option value="18-24">18 - 24</option>
+                    <option value="25-34">25 - 34</option>
+                    <option value="35-50">35 - 50</option>
+                    <option value="50+">50+</option>
+                </select>
+            </div>
+
+            <!-- Thu nhập -->
+            <div class="form-group">
+                <label class="title">What is your yearly household income?</label>
+                <select name="income">
+                    <option value="0-25k">$0 - $25,000</option>
+                    <option value="25k-50k">$25,001 - $50,000</option>
+                    <option value="50k-100k">$50,001 - $100,000</option>
+                    <option value="100k+">$100,000+</option>
+                </select>
+            </div>
+
+            <!-- Bảng đánh giá sản phẩm (Likert Scale Matrix) -->
+            <div class="form-group">
+                <label class="title">How often do you use our services?</label>
+                <table class="matrix-table">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Daily</th>
+                            <th>Weekly</th>
+                            <th>Monthly</th>
+                            <th>Rarely</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Service Quality</td>
+                            <td><input type="radio" name="service_quality" value="daily"></td>
+                            <td><input type="radio" name="service_quality" value="weekly"></td>
+                            <td><input type="radio" name="service_quality" value="monthly"></td>
+                            <td><input type="radio" name="service_quality" value="rarely"></td>
+                        </tr>
+                        <tr>
+                            <td>Customer Support</td>
+                            <td><input type="radio" name="support" value="daily"></td>
+                            <td><input type="radio" name="support" value="weekly"></td>
+                            <td><input type="radio" name="support" value="monthly"></td>
+                            <td><input type="radio" name="support" value="rarely"></td>
+                        </tr>
+                        <tr>
+                            <td>Overall Experience</td>
+                            <td><input type="radio" name="experience" value="daily"></td>
+                            <td><input type="radio" name="experience" value="weekly"></td>
+                            <td><input type="radio" name="experience" value="monthly"></td>
+                            <td><input type="radio" name="experience" value="rarely"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <button type="submit" class="btn-submit">Submit Survey</button>
+        </form>
+    </div>
+
+</body>
+</html>
